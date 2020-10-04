@@ -5,11 +5,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build-css": "tailwindcss build styles/tailwind.css -o styles/styles.css"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "file-loader": "^6.1.0",
+    "isomorphic-unfetch": "^3.1.0",
     "next": "9.5.3",
+    "next-images": "^1.6.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "swiper": "^6.3.2",
+    "tailwindcss": "^1.8.10"
   }
 }

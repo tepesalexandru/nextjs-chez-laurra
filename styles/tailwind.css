@@ -1,0 +1,48 @@
+.fStyle:focus {
+    @apply outline-none shadow-outline;
+}
+
+.subLink {
+    @apply flex-shrink-0 w-full py-2 border-b border-dBrown border-opacity-25;
+}
+
+.subLink:focus {
+    @apply outline-none shadow-outline;
+}
+
+.cardLink {
+    @apply w-5/6 bg-red text-linen rounded-full shadow-lg py-2 px-4 flex-shrink-0 -mt-5 z-10 font-bold flex justify-between items-center;
+}
+
+.cardLink:focus {
+    @apply outline-none shadow-outline;
+}
+
+.mNListItem {
+    @apply py-2 px-4 w-full border-b border-dBrown border-opacity-25;
+}
+
+.mNListItem:focus {
+    @apply outline-none shadow-outline;
+}
+
+.sImgBox {
+    @apply w-full rounded-lg shadow-md overflow-hidden flex-shrink-0;
+}
+
+.sImg {
+    @apply w-full h-full object-cover object-center absolute top-0 left-0;
+}
+
+.btnImgBox {
+    @apply w-full rounded-lg shadow-md overflow-hidden;
+}
+
+.btnImgBox:focus {
+    @apply outline-none shadow-outline;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
