@@ -2,17 +2,18 @@ import React from "react";
 import Link from 'next/link';
 
 export default function RecipeCard(props) {
+  const {AWS_URL} = process.env;
   return (
     <div className="flex flex-col items-center">
       <div className="w-full square rounded-lg shadow-md overflow-hidden flex-shrink-0">
         <img
           className="w-full h-full object-cover object-center absolute top-0 left-0"
-          src="./assets/images/IMG_0510.jpg"
+          src={`${props.image}`}
           alt="food"
         />
       </div>
       {/* Name */}
-      <Link href="/recipes/[genre]/[slug]" as={`/recipes/${props.genre}/${props.slug}`}>
+      <Link href="/recipes/[genre]/[slug]" as={`/recipes/${props.category}/${props.slug}`}>
       <a className="cardLink">
         <h3 className="flex-1 truncate">{props.label}</h3>
         <svg

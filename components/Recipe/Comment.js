@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function UserComment() {
+export default function UserComment(props) {
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  let date = new Date(props.date);
+  let year = date.getUTCFullYear();
+  let month = date.getUTCMonth();
+  let day = date.getUTCDate();
   return (
     <div className="w-full flex flex-col overflow-hidden">
       {/* Avatar/Name/Email*/}
@@ -25,14 +30,14 @@ export default function UserComment() {
         {/* Name/Email */}
         <div className="flex-1 flex flex-col items-start justify-around">
           <h6 className="text-base font-medium w-full truncate">
-            Tepes Paulo George Alexandru
+            {props.first} {props.last}
           </h6>
-          <p className="text-sm -mt-px">26th June, 2020</p>
+          <p className="text-sm -mt-px">{day} {months[month]}, {year}</p>
         </div>
       </div>
       {/* Comment */}
       <p className="w-full font-medium pl-1">
-        Recipe was good, I ate too much, now I'm FAT wadu hek.
+       {props.content}
       </p>
     </div>
   );

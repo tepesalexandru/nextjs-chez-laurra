@@ -9,8 +9,8 @@ function Recipes(props) {
       <Heading title="Our Favorite Recipes" />
       {/* Recipes */}
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-        {props.recipes.map((recipe) => (
-          <RecipeCard label={recipe.title} genre={recipe.categories[0].slug} slug={recipe.slug}/>
+        {props.recipes.slice(0, 6).map((recipe) => (
+          <RecipeCard label={recipe.Name} category={recipe.navigation.slug} slug={recipe.Slug} image={recipe.Cover.formats.medium.url}/>
         ))}
       </div>
     </section>

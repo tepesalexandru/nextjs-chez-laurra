@@ -8,7 +8,7 @@ import Recipes from "../components/Homepage/Recipes";
 import Searchbar from "../components/Homepage/Searchbar";
 
 function Home(props) {
-  console.log(props);
+  console.log("book", props.book);
   return (
     <div className="bg-linen font-dLibre text-dBrown">
       <div
@@ -18,20 +18,23 @@ function Home(props) {
       <Searchbar />
       <main className="w-full pb-24 lg:pb-32">
         {/* Recipes */}
-        <Recipes recipes={props.products}/>
-        <Book />
-        {/* Instagram */}
+      
+        <Recipes recipes={props.recipes}/>
+      
+        <Book link={props.book.ShortText} description={props.book.LongText}/>
+        {/* Instagram 
         <section className="max-w-6xl w-full mx-auto px-6 md:px-12 flex flex-col items-center">
           <Heading title="Our Instagram" />
-          {/* Image Gallery */}
+      
           <article className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-12">
-            {/* Image */}
+         
             <IGImage />
             <IGImage />
             <IGImage />
             <IGImage />
           </article>
         </section>
+      */}
       </main>
       <Footer />
     </div>
@@ -40,11 +43,16 @@ function Home(props) {
 
 export async function getServerSideProps(context) {
   const { API_URL } = process.env;
-  const res = await fetch(`${API_URL}/products`);
+  const res = await fetch(`${API_URL}/recipes`);
   const data = await res.json();
+
+  const bookRes = await fetch(`${API_URL}/generals/2`);
+  const bookData = await bookRes.json();
+
   return {
     props: {
-      products: data
+      recipes: data,
+      book: bookData
     }
   }
 }

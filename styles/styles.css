@@ -1,103 +1,3 @@
-.fStyle:focus {
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-}
-
-.subLink {
-  flex-shrink: 0;
-  width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom-width: 1px;
-  --border-opacity: 1;
-  border-color: #483D3F;
-  border-color: rgba(72, 61, 63, var(--border-opacity));
-  --border-opacity: 0.25;
-}
-
-.subLink:focus {
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-}
-
-.cardLink {
-  width: 83.333333%;
-  --bg-opacity: 1;
-  background-color: #DF3B57;
-  background-color: rgba(223, 59, 87, var(--bg-opacity));
-  --text-opacity: 1;
-  color: #FBF3EB;
-  color: rgba(251, 243, 235, var(--text-opacity));
-  border-radius: 9999px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  flex-shrink: 0;
-  margin-top: -1.25rem;
-  z-index: 10;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cardLink:focus {
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-}
-
-.mNListItem {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 100%;
-  border-bottom-width: 1px;
-  --border-opacity: 1;
-  border-color: #483D3F;
-  border-color: rgba(72, 61, 63, var(--border-opacity));
-  --border-opacity: 0.25;
-}
-
-.mNListItem:focus {
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-}
-
-.sImgBox {
-  width: 100%;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.sImg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.btnImgBox {
-  width: 100%;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-}
-
-.btnImgBox:focus {
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-}
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -712,6 +612,127 @@ video {
   .container {
     max-width: 1280px;
   }
+}
+
+.fStyle:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.subLink {
+  flex-shrink: 0;
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #483D3F;
+  border-color: rgba(72, 61, 63, var(--border-opacity));
+  --border-opacity: 0.25;
+}
+
+.subLink:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.cardLink {
+  width: 83.333333%;
+  --bg-opacity: 1;
+  background-color: #DF3B57;
+  background-color: rgba(223, 59, 87, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #FBF3EB;
+  color: rgba(251, 243, 235, var(--text-opacity));
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex-shrink: 0;
+  margin-top: -1.25rem;
+  z-index: 10;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardLink:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.mNListItem {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #483D3F;
+  border-color: rgba(72, 61, 63, var(--border-opacity));
+  --border-opacity: 0.25;
+}
+
+.mNListItem:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.pButton {
+  --bg-opacity: 1;
+  background-color: #DF3B57;
+  background-color: rgba(223, 59, 87, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #FBF3EB;
+  color: rgba(251, 243, 235, var(--text-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.pButton:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.sImgBox {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.sImg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.btnImgBox {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.btnImgBox:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 
 .space-y-0 > :not(template) ~ :not(template) {

@@ -1,10 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from 'axios';
 
-export default function CommentForm() {
+export default function CommentForm(props) {
+
+  const [first, setFirst] = useState("");
+  const [last, setLast] = useState("");
+  const [content, setContent] = useState("");
+
+  const submitComment = () => {
+    axios.post(`http://localhost:1337/comments`, {
+      "Content": content,
+      "FirstName": first,
+      "LastName": last,
+      "recipe": props.recipe
+    })
+  }
+
   return (
-    <form
+    <div
       className="w-full grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-6 bg-almond rounded-lg shadow-lg p-6 lg:px-8 mb-12"
-      action
+      
     >
       {/* First Name */}
       <div className="flex flex-col">
@@ -12,6 +27,8 @@ export default function CommentForm() {
           First Name
         </label>
         <input
+          value={first}
+          onChange={e => setFirst(e.target.value)}
           className="w-full fStyle py-3 px-6 shadow-md rounded-lg bg-linen"
           type="text"
           name="fName"
@@ -26,6 +43,8 @@ export default function CommentForm() {
           Last Name
         </label>
         <input
+        value={last}
+        onChange={e => setLast(e.target.value)}
           className="w-full fStyle py-3 px-6 shadow-md rounded-lg bg-linen"
           type="text"
           name="lName"
@@ -39,6 +58,8 @@ export default function CommentForm() {
           Your Comment
         </label>
         <textarea
+        value={content}
+        onChange={e => setContent(e.target.value)}
           className="w-full fStyle py-3 px-6 shadow-md rounded-lg bg-linen"
           name="commentArea"
           id="commentArea"
@@ -52,13 +73,12 @@ export default function CommentForm() {
       <div className="md:col-span-2 flex justify-end">
         {/* Post Comment */}
         <div className="flex md:mt-2">
-          <input
+          <button
+          onClick={() => submitComment()}
             className="pButton cursor-pointer"
-            type="submit"
-            defaultValue="Post Comment"
-          />
+          >Submit</button>
         </div>
       </div>
-    </form>
+    </div>
   );
 }

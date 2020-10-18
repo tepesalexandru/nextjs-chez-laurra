@@ -5,10 +5,12 @@ const withImages = require("next-images");
 module.exports = withImages({
 
     env: {
-        API_URL: process.env.API_URL
+        API_URL: process.env.API_URL,
+        AWS_URL: process.env.AWS_URL
     },
     publicRuntimeConfig: {
-        API_URL: process.env.API_URL
+        API_URL: process.env.API_URL,
+        AWS_URL: process.env.AWS_URL
     },
 
     webpack: (config, options) => {

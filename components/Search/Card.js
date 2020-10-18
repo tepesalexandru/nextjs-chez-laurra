@@ -1,12 +1,12 @@
 import React from "react";
 import Link from 'next/link';
 
-export default function SimilarCard(props) {
-  const {API_URL} = process.env;
+export default function CardResult(props) {
+  console.log("url", props.image)
   return (
     <div className="flex flex-col items-center">
       <div className="sImgBox">
-        <img className="sImg" src={`${props.image}`} alt="food" />
+        <img className="sImg" src={props.image} alt="food" />
       </div>
       {/* Name */}
       <Link href="/recipes/[category]/[slug]" as={`/recipes/${props.category}/${props.slug}`}>
