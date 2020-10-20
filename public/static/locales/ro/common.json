@@ -1,0 +1,29 @@
+{
+  "navigations": {
+    "nav-0": "Bucatarie Internationala",
+    "nav-1": "Bucatarie Franceza",
+    "nav-2": "Brutarie",
+    "nav-3": "Deserturi",
+
+    "slug-0": "bucatarie-internationala",
+    "slug-1": "bucatarie-franceza",
+    "slug-2": "brutarie",
+    "slug-3": "deserturi"
+  },
+  "home": {
+    "header": "Ultimele Retete"
+  },
+  "contact": {
+    "header": "Contact",
+    "description": "Bonjour si bine ai venit Chez Laurra ! Eu sunt Laura si locuiesc in Franta. Pe langa gatit, imi place sa organizez si sa decorez bucatarii. Descurajez food waste-ul (risipa de mancare) si sustin conceptele de reciclare si economie circulara.  La Chez Laurra vei gasi retete predominant vegetariene. Gatesc in principal retete inspirate din bucataria franceza, italiana, indiana, romaneasca, englezeasca, insa sunt deschisa la a incerca feluri de mancare din toate bucatariile. Cu cat mai diverse aromele si cu cat mai multe culori in farfurie, cu atat mai bine ! Inspiratia mi-o gasesc in carti de gatit sau carti al caror autor sunt diversi chefi - Jamie Oliver, Gordon Ramsay, Ottolenghi, Luana Belmondo, reviste (Cuisine Actuelle, Saveur), conturi de instagram, de Youtube, cat si site-uri specializate (BBC Good Food in principal).  Daca ai o intrebare pentru mine sau vrei sa impartasesti experienta ta, nu ezita sa imi lasi un mesaj sau sa distribui rezultatul direct pe contul tau de social media. ",
+    "name": "Nume",
+    "placeholder": "Scrie aici...",
+    "submit": "Trimite"
+  },
+  "search": {
+
+  },
+  "recipe": {
+      
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "navigations": {
+    "nav-0": "Cuisine Internationale",
+    "nav-1": "Cuisine Française",
+    "nav-2": "Boulangerie",
+    "nav-3": "Desserts",
+
+    "slug-0": "bucatarie-internationala",
+    "slug-1": "bucatarie-franceza",
+    "slug-2": "brutarie",
+    "slug-3": "deserturi"
+  },
+  "home": {
+    "header": "Vos recettes favorites en ce moment"
+  },
+  "contact": {
+    "header": "Contact",
+    "description": "Bonjour et Bienvenue Chez Laurra ! Je m'appelle Laura et je vis en France. Hors cuisiner, j'aime organiser et décorer les cuisines. Je décourage le gaspillage et je soutiens les concepts de recyclage et d'économie circulaire. Chez Laurra, vous trouverez des recettes prédominant végétariennes. Je cuisine principalement des recettes inspirées de la cuisine française, italienne, indienne, roumaine, anglaise, mais je suis ouverte à l'idée d'essayer des plats de toutes les cuisines. Plus les saveurs sont variées et plus l'assiette est colorée, mieux c'est ! Je trouve mon inspiration dans des livres de cuisine ou des chefs célèbres comme Jamie Oliver, Gordon Ramsay, Ottolenghi, Luana Belmondo, mais aussi dans des magazines (Cuisine Actuelle, Saveur), des comptes Instagram, des comptes Youtube, ainsi que des sites spécialisés (BBC Good Food principalement). Si vous avez une question à me poser ou si vous souhaitez partager votre expérience, n'hésitez pas à me laisser un message ou à partager le résultat directement sur votre compte social media.",
+    "name": "Nom",
+    "placeholder": "Écrivez ici",
+    "submit": "Envoyer"
+  }
+}

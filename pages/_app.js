@@ -4,15 +4,16 @@ import 'swiper/swiper-bundle.css';
 import getConfig from "next/config";
 import fetch from "isomorphic-unfetch";
 import {DefaultSeo} from 'next-seo';
+import App from 'next/app';
 
 import Header from "../components/Header";
 import SEO from "../next-seo.config";
+import { appWithTranslation } from '../i18n'
 
-function MyApp({ Component, pageProps, navigation }) {
+function MyApp({ Component, pageProps}) {
   return (
     <>
       <DefaultSeo {...SEO} />
-      <Header navigation={navigation}/>
       <Component {...pageProps} />
     </>
   );
@@ -20,11 +21,8 @@ function MyApp({ Component, pageProps, navigation }) {
 
 const { publicRuntimeConfig } = getConfig();
 
-MyApp.getInitialProps = async () => {
-  const res = await fetch(`${publicRuntimeConfig.API_URL}/navigations`);
-  const navigation = await res.json();
-
-  return { navigation };
+MyApp.getInitialProps = async (appContext) => {
+  return { ...await  App.getInitialProps(appContext)};
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);

@@ -7,9 +7,20 @@ import IGImage from "../components/Homepage/IGImage";
 import Recipes from "../components/Homepage/Recipes";
 import Searchbar from "../components/Homepage/Searchbar";
 
+import { withTranslation } from '../i18n'
+
 function Home(props) {
-  console.log("book", props.book);
+  const navigation = [];
+  for (let i = 0; i < 4; i++) {
+    navigation.push({
+      label: props.t(`navigations.nav-${i}`),
+      slug: props.t(`navigations.slug-${i}`)
+    })
+  }
+
   return (
+    <>
+    <Header navigation={navigation}/>
     <div className="bg-linen font-dLibre text-dBrown">
       <div
         id="darkBG"
@@ -19,9 +30,9 @@ function Home(props) {
       <main className="w-full pb-24 lg:pb-32">
         {/* Recipes */}
       
-        <Recipes recipes={props.recipes}/>
+        <Recipes recipes={props.recipes} title={props.t('home.header')}/>
       
-        <Book link={props.book.ShortText} description={props.book.LongText}/>
+        {/*<Book link={props.book.ShortText} description={props.book.LongText}/>*/}
         {/* Instagram 
         <section className="max-w-6xl w-full mx-auto px-6 md:px-12 flex flex-col items-center">
           <Heading title="Our Instagram" />
@@ -38,6 +49,7 @@ function Home(props) {
       </main>
       <Footer />
     </div>
+    </>
   );
 }
 
@@ -57,4 +69,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default Home;
+export default withTranslation('common')(Home);

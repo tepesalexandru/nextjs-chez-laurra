@@ -1,0 +1,23 @@
+{
+  "navigations": {
+    "nav-0": "International Cuisine",
+    "nav-1": "French Cuisine",
+    "nav-2": "Baking",
+    "nav-3": "Desserts",
+
+    "slug-0": "bucatarie-internationala",
+    "slug-1": "bucatarie-franceza",
+    "slug-2": "brutarie",
+    "slug-3": "deserturi"
+  },
+  "home": {
+    "header": "Let's cook something creative!"
+  },
+  "contact": {
+    "header": "Contact",
+    "description": "Hello and Welcome to Chez Laurra! I'm Laura and I live in France. Besides cooking, I like to organize and decorate kitchens. I discourage food waste and support the concepts of recycling and the circular economy. At Chez Laurra you will find predominantly vegetarian recipes. I mainly cook recipes inspired by French, Italian, Indian, Romanian, English cuisine, but I am open to trying dishes from all cuisines. The more diverse the flavors and the more colors in the plate, the better! I find inspiration in cooking books or famous authors chefs like Jamie Oliver, Gordon Ramsay, Ottolenghi, Luana Belmondo, also magazines (Cuisine Actuelle, Saveur), Instagram accounts, Youtube accounts, as well as specialized sites (BBC Good Food mainly). If you have a question for me or want to share your experience, do not hesitate to leave me a message or share the result directly on your social media account. ",
+    "name": "Name",
+    "placeholder": "Type here...",
+    "submit": "Send"
+  }
+}

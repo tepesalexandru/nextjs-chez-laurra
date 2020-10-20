@@ -1,16 +1,16 @@
 import React from "react";
 import logo from "public/assets/images/logo.png";
-import Link from "next/link";
 
-export default function Header(props) {
+import {i18n, Link} from '../i18n';
 
+function Header(props) {
   const renderListItems = () => {
     return props.navigation.map((nav) => (
       <Link key={nav.slug} href="/recipes/[category]" as={`/recipes/${nav.slug}`}>
         <a>
           <li className="mx-4">
             <p className="fStyle px-1 py-2 rounded-full text-center">
-              {nav.title}
+              {nav.label}
             </p>
           </li>
         </a>
@@ -35,12 +35,13 @@ export default function Header(props) {
               </button>
             </div>
             {/* Logo */}
+            <Link href="/">
             <a
               className="fStyle lg:mr-16 rounded-full flex-shrink-0 my-2"
-              href="/"
             >
               <img className="h-12" src={logo} alt="Chez Laurra" />
             </a>
+            </Link>
           </div>
           {/* Nav Links */}
           <ul className="hidden lg:flex items-center font-medium">
@@ -56,7 +57,7 @@ export default function Header(props) {
             </Link>
           </ul>
           {/* Language */}
-          <button className="fStyle bg-wattle font-bold rounded-full shadow-sm py-2 px-4 text-xs">
+          <button onClick={() => i18n.changeLanguage(i18n.language === "ro" ? "fr" : "ro")} className="fStyle bg-wattle font-bold rounded-full shadow-sm py-2 px-4 text-xs">
             Switch to French
           </button>
         </section>
@@ -86,3 +87,5 @@ export default function Header(props) {
     </div>
   );
 }
+
+export default Header;
