@@ -8,7 +8,7 @@
     "slug-0": "bucatarie-internationala",
     "slug-1": "bucatarie-franceza",
     "slug-2": "brutarie",
-    "slug-3": "deserturi"
+    "slug-3": "desert"
   },
   "home": {
     "header": "Let's cook something creative!"
@@ -19,5 +19,11 @@
     "name": "Name",
     "placeholder": "Type here...",
     "submit": "Send"
+  },
+  "recipe": {
+    "ingredients": "Ingredients",
+    "share": "Share via",
+    "prep-header": "Method of preparation",
+    "similar": "You also might like"
   }
 }

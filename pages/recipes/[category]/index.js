@@ -1,8 +1,9 @@
 import React from "react";
 import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
-import Link from "next/link";
+import {Link, withTranslation} from "../../../i18n";
 import { NextSeo } from "next-seo";
+import Header from "../../../components/Header";
 
 function CategoryPage(props) {
   const router = useRouter();
@@ -14,7 +15,7 @@ function CategoryPage(props) {
           <div className="sImgBox">
             <img
               className="sImg"
-              src={`http://localhost:1337${recipe.Cover.formats.medium.url}`}
+              src={`${recipe.Cover.formats.medium.url}`}
               alt="food"
             />
           </div>
@@ -53,9 +54,21 @@ function CategoryPage(props) {
     description: `${props.headerTitle}`
   }
 
+  const navigation = [];
+  for (let i = 0; i < 4; i++) {
+    navigation.push({
+      label: `${props.t(`navigations.nav-${i}`)}`,
+      slug: `${props.t(`navigations.slug-${i}`)}`
+    })
+  }
+  const renderHeader = () => {
+    return props.t(`navigations.nav-${props.headerTitle}`);
+  }
+
   return (
     <>
       <NextSeo {...SEO} />
+      <Header navigation={navigation}/>
       <div className="bg-linen font-dLibre text-dBrown">
         <header
           className="relative w-full bg-center bg-no-repeat bg-cover py-32 lg:py-56 px-6 mb-12 z-0"
@@ -71,7 +84,7 @@ function CategoryPage(props) {
           <section className="max-w-screen-xl w-full mx-auto px-6 md:px-12 mb-24 lg:mb-32">
             {/* Name */}
             <h1 className="text-3xl md:text-5xl font-bold text-center leading-none mb-3 z-10">
-              {props.headerTitle}
+              {renderHeader()}
             </h1>
             {/* Decoration */}
             <div className="max-w-xs md:w-full mx-auto px-12 flex justify-around z-10 mb-12">
@@ -94,21 +107,29 @@ function CategoryPage(props) {
 
 export async function getServerSideProps({ query }) {
   const { API_URL } = process.env;
-  const res = await fetch(`${API_URL}/navigations?slug=${query.category}`);
+  const res = await fetch(`${API_URL}/navigations`);
   const recipesRes = await fetch(
     `${API_URL}/recipes?navigation.slug=${query.category}`
   );
   const recipesData = await recipesRes.json();
   const data = await res.json();
+    let hdIdx = 0;
+    console.log("dt", data);
+  for (let i = 0; i < 4; i++) {
+    if (data[i].slug === query.category) {
+      hdIdx = i;
+      break;
+    }
+  }
 
   // cover image
   return {
     props: {
-      headerTitle: data[0].title,
-      slug: data[0].slug,
+      headerTitle: hdIdx,
+      slug: data[hdIdx].slug,
       recipes: recipesData,
     },
   };
 }
 
-export default CategoryPage;
+export default withTranslation('common')(CategoryPage);

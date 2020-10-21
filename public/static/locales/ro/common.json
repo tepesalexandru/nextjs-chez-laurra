@@ -8,7 +8,7 @@
     "slug-0": "bucatarie-internationala",
     "slug-1": "bucatarie-franceza",
     "slug-2": "brutarie",
-    "slug-3": "deserturi"
+    "slug-3": "desert"
   },
   "home": {
     "header": "Ultimele Retete"
@@ -24,6 +24,9 @@
 
   },
   "recipe": {
-      
+      "ingredients": "Ingrediente",
+      "share": "Da-l mai departe daca ti-a placut",
+      "prep-header": "Mod de preparare",
+      "similar": "S-ar putea sa-ti placa"
   }
 }

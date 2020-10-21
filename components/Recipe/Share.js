@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function Share() {
+export default function Share(props) {
   return (
     <div className="relative w-full bg-almond rounded-lg shadow-md pt-6 p-8">
       <h6 className="text-xl md:text-3xl font-bold leading-none mb-4 w-full pr-12">
-        Share via
+        {props.title}
       </h6>
       <div className="flex items-center justify-between text-red">
         <div className="flex">

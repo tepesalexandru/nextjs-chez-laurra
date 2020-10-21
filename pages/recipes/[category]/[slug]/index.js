@@ -11,6 +11,8 @@ import Steps from "../../../../components/Recipe/Steps";
 import Comment from "../../../../components/Recipe/Comment";
 import IGImage from "../../../../components/Recipe/IGImage";
 import Heading from "../../../../components/Recipe/Heading";
+import Header from "../../../../components/Header";
+import {withTranslation} from '../../../../i18n'
 
 function RecipePage(props) {
   const [recipeRef, setRecipeRef] = useState(null);
@@ -18,8 +20,16 @@ function RecipePage(props) {
     title: `Chezz Laura | ${props.recipe.Name}`,
     description: `${props.recipe.Name}`
   }
+  const navigation = [];
+  for (let i = 0; i < 4; i++) {
+    navigation.push({
+      label: props.t(`navigations.nav-${i}`),
+      slug: props.t(`navigations.slug-${i}`)
+    })
+  }
   return (
     <>
+    <Header navigation ={navigation}/>
     <NextSeo {...SEO} />
     <div className="bg-linen font-dLibre text-dBrown">
       <header
@@ -46,18 +56,21 @@ function RecipePage(props) {
                 cook={props.recipe.CookTime}
                 total={props.recipe.TotalTime}
                 toPrint={recipeRef}
+                ingredients={props.recipe.Ingredients}
+                title={props.t('recipe.ingredients')}
               />
-              <Share />
+              <Share title={props.t('recipe.share')}/>
             </div>
           </div>
           {/* Main */}
           <div className="lg:col-span-2 w-full grid grid-cols-1 gap-12">
-            <Ingredients content={props.recipe.Ingredients} />
+            {/*<Ingredients  content={props.recipe.Ingredients} />*/}
             <div className="w-full flex flex-col">
               <h6 className="text-xl md:text-3xl font-bold leading-none mb-6 w-full">
-                Method of Preparation
+                {props.t('recipe.prep-header')}
               </h6>
               {/* Iframe Container */}
+              {/*
               <div className="w-full rounded-lg shadow-lg mb-8 overflow-hidden">
                 <iframe
                   className="w-full object-cover"
@@ -69,6 +82,7 @@ function RecipePage(props) {
                   allowFullScreen
                 />
               </div>
+              */}
               <Steps content={props.recipe.Preparation} ref={e => setRecipeRef(e)}/>
             </div>
           </div>
@@ -80,7 +94,7 @@ function RecipePage(props) {
             r2={props.recipe.Result2.formats.medium.url}
           />
           <article className="w-full flex flex-col items-center mb-24 lg:mb-32">
-            <Heading label="Similar Recipes" />
+            <Heading label={props.t('recipe.similar')} />
             <Similar content={props.similar}/>
           </article>
           {/* Comments */}
@@ -135,4 +149,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default RecipePage;
+export default withTranslation('common')(RecipePage);

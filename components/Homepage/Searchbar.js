@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Link from "next/link";
+import {Link} from "../../i18n";
 
 export default function Searchbar(props) {
   const [term, setTerm] = useState("");

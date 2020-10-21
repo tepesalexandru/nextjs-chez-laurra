@@ -4,12 +4,14 @@ import fetch from "isomorphic-unfetch";
 import CardResult from "../../components/Search/Card";
 import HeaderResult from "../../components/Search/Header";
 import { NextSeo } from "next-seo";
+import Header from "../../components/Header";
+import {withTranslation} from '../../i18n';
 
-export default function Recipes(props) {
+function Recipes(props) {
   const myRouter = useRouter();
   const urlPaths = myRouter.asPath.split("=");
   let searchTerm = urlPaths[urlPaths.length - 1];
-  searchTerm = searchTerm.replaceAll("%20", " ");
+  searchTerm = searchTerm.replace(/%20/g, " ");
   if (searchTerm === "/recipes") searchTerm = "";
   const [term, setTerm] = useState(searchTerm || "");
 
@@ -37,10 +39,18 @@ export default function Recipes(props) {
     title: 'Chezz Laura | Retete',
     description: 'Toate retetele'
   }
+  const navigation = [];
+  for (let i = 0; i < 4; i++) {
+    navigation.push({
+      label: props.t(`navigations.nav-${i}`),
+      slug: props.t(`navigations.slug-${i}`)
+    })
+  }
 
   return (
     <>
       <NextSeo {...SEO} />
+      <Header navigation={navigation}/>
       <div className="bg-linen font-dLibre text-dBrown">
         <header
           className="relative w-full bg-center bg-no-repeat bg-cover pt-32 pb-48 px-6 mb-6 z-0"
@@ -75,10 +85,10 @@ export default function Recipes(props) {
             if (recList.length > 0) {
               return (
                 <section
-                  key={rec.navigation.slug}
+                  key={`idx-${idx}`}
                   className="max-w-screen-xl w-full mx-auto px-6 md:px-12 flex flex-col items-center mb-24 lg:mb-32"
                 >
-                  <HeaderResult title={categories[idx]} />
+                  <HeaderResult title={props.t(`navigations.nav-${idx}`)} />
                   <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
                     {recList.map((rec) => (
                       <CardResult
@@ -111,3 +121,5 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+export default withTranslation('common')(Recipes);

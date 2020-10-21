@@ -1,5 +1,5 @@
 import React from "react";
-import Link from 'next/link';
+import {Link} from '../../i18n';
 
 export default function SimilarCard(props) {
   const {API_URL} = process.env;

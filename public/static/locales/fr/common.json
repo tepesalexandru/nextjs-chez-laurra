@@ -8,7 +8,7 @@
     "slug-0": "bucatarie-internationala",
     "slug-1": "bucatarie-franceza",
     "slug-2": "brutarie",
-    "slug-3": "deserturi"
+    "slug-3": "desert"
   },
   "home": {
     "header": "Vos recettes favorites en ce moment"
@@ -19,5 +19,11 @@
     "name": "Nom",
     "placeholder": "Écrivez ici",
     "submit": "Envoyer"
+  },
+  "recipe": {
+    "ingredients": "Ingrédients",
+    "share": "Partager via",
+    "prep-header": "Méthode de préparation",
+    "similar": "Ça peut t’intéresser"
   }
 }
