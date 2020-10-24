@@ -33,7 +33,7 @@ function Contact({ t }) {
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-linen pointer-events-none z-0" />
       </header>
 
-      <div className="bg-linen font-dLibre text-dBrown pt-16">
+      <div className="bg-white font-dLibre text-dBrown pt-16">
         <main className="w-full">
           {/* Name & Info */}
           <section className="max-w-screen-xl w-full mx-auto px-6 md:px-12 mb-24 lg:mb-32">

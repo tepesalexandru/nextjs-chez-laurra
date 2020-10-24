@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from '../../i18n';
 
 export default function CardResult(props) {
-  console.log("url", props.image)
   return (
     <div className="flex flex-col items-center">
       <div className="sImgBox">

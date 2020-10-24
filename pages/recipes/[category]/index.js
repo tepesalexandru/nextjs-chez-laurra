@@ -69,7 +69,7 @@ function CategoryPage(props) {
     <>
       <NextSeo {...SEO} />
       <Header navigation={navigation}/>
-      <div className="bg-linen font-dLibre text-dBrown">
+      <div className="bg-white font-dLibre text-dBrown">
         <header
           className="relative w-full bg-center bg-no-repeat bg-cover py-32 lg:py-56 px-6 mb-12 z-0"
           style={{

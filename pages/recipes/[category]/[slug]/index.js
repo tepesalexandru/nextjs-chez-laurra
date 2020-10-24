@@ -12,9 +12,12 @@ import Comment from "../../../../components/Recipe/Comment";
 import IGImage from "../../../../components/Recipe/IGImage";
 import Heading from "../../../../components/Recipe/Heading";
 import Header from "../../../../components/Header";
-import {withTranslation} from '../../../../i18n'
+import {withTranslation, i18n} from '../../../../i18n'
+import absoluteUrl from 'next-absolute-url'
+
 
 function RecipePage(props) {
+  console.log("full url", props.fullURL);
   const [recipeRef, setRecipeRef] = useState(null);
   const SEO = {
     title: `Chezz Laura | ${props.recipe.Name}`,
@@ -27,11 +30,74 @@ function RecipePage(props) {
       slug: props.t(`navigations.slug-${i}`)
     })
   }
+
+  const getImage = (idx) => {
+    if (idx == 0) {
+      if (props.recipe.Cover.formats.medium.url !== undefined) {
+        return props.recipe.Cover.formats.medium.url;
+      } else if (props.recipe.Cover.formats.thumbnail.url !== undefined) {
+        return props.recipe.Cover.formats.thumbnail.url;
+      }
+    } else if (idx == 1) {
+      if (props.recipe.Result1.formats.medium.url !== undefined) {
+        return props.recipe.Result1.formats.medium.url;
+      } else if (props.recipe.Result1.formats.thumbnail.url !== undefined) {
+        return props.recipe.Result1.formats.thumbnail.url;
+      }
+    } else if (idx == 2) {
+      if (props.recipe.Result2.formats.medium.url !== undefined) {
+        return props.recipe.Result2.formats.medium.url;
+      } else if (props.recipe.Result2.formats.thumbnail.url !== undefined) {
+        return props.recipe.Result2.formats.thumbnail.url;
+      }
+    }
+  }
+
+  const getLabel = (rec) => {
+    if (i18n.language === "ro") {
+      return rec.Name;
+    } else if (i18n.language === "fr") {
+      return rec.Name_Fr;
+    } else {
+      return rec.Name_Eng;
+    }
+  }
+
+  const getDesc = (rec) => {
+    if (i18n.language === "ro") {
+      return rec.Description;
+    } else if (i18n.language === "fr") {
+      return rec.Description_Fr;
+    } else {
+      return rec.Description_Eng;
+    }
+  }
+
+  const getIng = (rec) => {
+    if (i18n.language === "ro") {
+      return rec.Ingredients;
+    } else if (i18n.language === "fr") {
+      return rec.Ingredients_Fr;
+    } else {
+      return rec.Ingredients_Eng;
+    }
+  }
+
+  const getPrep = (rec) => {
+    if (i18n.language === "ro") {
+      return rec.Preparation;
+    } else if (i18n.language === "fr") {
+      return rec.Preparation_Fr;
+    } else {
+      return rec.Preparation_Eng;
+    }
+  }
+
   return (
     <>
     <Header navigation ={navigation}/>
     <NextSeo {...SEO} />
-    <div className="bg-linen font-dLibre text-dBrown">
+    <div className="bg-white font-dLibre text-dBrown">
       <header
         className="relative w-full bg-center bg-no-repeat bg-cover py-32 lg:py-56 px-6 mb-12 z-0"
         style={{
@@ -44,22 +110,17 @@ function RecipePage(props) {
       </header>
       <main className="w-full pb-24 lg:pb-32">
         <Introduction
-          title={props.recipe.Name}
-          desc={props.recipe.Description}
+          title={getLabel(props.recipe)}
+          desc={getDesc(props.recipe)}
         />
         <section className="max-w-screen-xl w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
           <div className="flex flex-col trigger">
             <div className="grid grid-cols-1 gap-12 pin">
               <BasicInfo
-                yd={props.recipe.Yield}
-                prep={props.recipe.PrepTime}
-                cook={props.recipe.CookTime}
-                total={props.recipe.TotalTime}
-                toPrint={recipeRef}
-                ingredients={props.recipe.Ingredients}
+                ingredients={getIng(props.recipe)}
                 title={props.t('recipe.ingredients')}
               />
-              <Share title={props.t('recipe.share')}/>
+              <Share title={props.t('recipe.share')} origin={props.fullURL}/>
             </div>
           </div>
           {/* Main */}
@@ -83,15 +144,15 @@ function RecipePage(props) {
                 />
               </div>
               */}
-              <Steps content={props.recipe.Preparation} ref={e => setRecipeRef(e)}/>
+              <Steps content={getPrep(props.recipe)} ref={e => setRecipeRef(e)}/>
             </div>
           </div>
         </section>
         {/* Showcase/Recipes/Comments */}
         <section className="max-w-screen-xl w-full mx-auto px-6 md:px-12 mb-24 lg:mb-32">
           <Result
-            r1={props.recipe.Result1.formats.medium.url}
-            r2={props.recipe.Result2.formats.medium.url}
+            r1={getImage(1)}
+            r2={getImage(2)}
           />
           <article className="w-full flex flex-col items-center mb-24 lg:mb-32">
             <Heading label={props.t('recipe.similar')} />
@@ -132,8 +193,9 @@ function RecipePage(props) {
   );
 }
 
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps({ query, req }) {
   const { API_URL } = process.env;
+  const { origin } = absoluteUrl(req);
   const recipeRes = await fetch(`${API_URL}/recipes?Slug=${query.slug}`);
   const recipeData = await recipeRes.json();
 
@@ -144,7 +206,8 @@ export async function getServerSideProps({ query }) {
   return {
     props: {
       recipe: recipeData[0],
-      similar: similarData
+      similar: similarData,
+      fullURL: origin
     },
   };
 }

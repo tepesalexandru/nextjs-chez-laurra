@@ -1,11 +1,13 @@
 import React from "react";
+import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer className="bg-dBrown text-linen w-full">
       <div className="max-w-screen-xl w-full mx-auto p-4 md:px-16 flex flex-col sm:flex-row justify-between items-center">
         <div className="flex justify-center mb-4 sm:mb-0">
-          <a className="fStyle rounded-full mr-4" href="#">
+          <Link href="https://www.facebook.com/chezlaurra/">
+          <a className="fStyle rounded-full mr-4">
             <svg
               className="h-8 w-8"
               width={24}
@@ -20,7 +22,9 @@ export default function Footer() {
               />
             </svg>
           </a>
-          <a className="fStyle rounded-full" href="#">
+          </Link>
+          <Link href="https://www.instagram.com/chezlaurra/">
+          <a className="fStyle rounded-full">
             <svg
               className="h-8 w-8"
               width={24}
@@ -43,6 +47,7 @@ export default function Footer() {
               />
             </svg>
           </a>
+          </Link>
         </div>
         <p className="text-center text-almond text-xs">
           Copyright © 2020 Chez Laurra | Website by

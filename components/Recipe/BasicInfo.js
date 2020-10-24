@@ -34,10 +34,10 @@ export default function BasicInfo(props) {
             <span>{this.props.total}</span>
           </li>
         </ul>*/}
-      <a class="pButton" href="#" onClick={() => this.printDocument()}>
+      {/*<a class="pButton" href="#" onClick={() => this.printDocument()}>
         {" "}
         Download Recipe{" "}
-      </a>
+      </a>*/}
     </div>
   );
 }

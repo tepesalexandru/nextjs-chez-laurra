@@ -6,7 +6,7 @@ export default function Searchbar(props) {
   return (
     <header
       className="relative w-full bg-center bg-no-repeat bg-cover pt-32 pb-48 px-6 mb-6 z-0"
-      style={{ backgroundImage: "url(./assets/images/bg.jpg)" }}
+      style={{ backgroundImage: "url(./assets/images/bg-ret.jpeg)" }}
     >
       <form className="relative max-w-3xl w-full mx-auto" action>
         <input

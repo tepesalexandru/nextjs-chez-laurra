@@ -8,7 +8,18 @@ import Recipes from "../components/Homepage/Recipes";
 import Searchbar from "../components/Homepage/Searchbar";
 
 import { withTranslation } from '../i18n'
-
+  /// TODO
+  /// 1. Fundalul alb [X]
+  /// 2. Imaginea de bg [X]
+  /// 3. Butonul switch (3 limbi) [X]
+  /// 4. Traducere in engleza [X]
+  /// 5. Traducerea retetei [X]
+  /// 6. Poze (sa nu puste) [X]
+  /// 7. Doua butoane spre paginile sociale [X]
+  /// 8. Ingredientele sa ramana
+  /// 9. Functionabil share [X]
+  /// 10. Footer spre social [X]
+  /// 11. Butoane verzi [X]
 function Home(props) {
   const navigation = [];
   for (let i = 0; i < 4; i++) {
@@ -21,7 +32,7 @@ function Home(props) {
   return (
     <>
     <Header navigation={navigation}/>
-    <div className="bg-linen font-dLibre text-dBrown">
+    <div className="bg-white font-dLibre text-dBrown">
       <div
         id="darkBG"
         className="fixed top-0 left-0 w-full h-screen bg-dBrown bg-opacity-50 z-30 hidden"

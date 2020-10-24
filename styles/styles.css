@@ -639,8 +639,8 @@ video {
 .cardLink {
   width: 83.333333%;
   --bg-opacity: 1;
-  background-color: #DF3B57;
-  background-color: rgba(223, 59, 87, var(--bg-opacity));
+  background-color: #CADA4B;
+  background-color: rgba(202, 218, 75, var(--bg-opacity));
   --text-opacity: 1;
   color: #FBF3EB;
   color: rgba(251, 243, 235, var(--text-opacity));

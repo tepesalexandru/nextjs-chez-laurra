@@ -46,12 +46,33 @@ function Recipes(props) {
       slug: props.t(`navigations.slug-${i}`)
     })
   }
+  const getImage = (rec, idx) => {
+    if (idx == 0) {
+      if (rec.Cover.formats.medium.url !== undefined) {
+        return rec.Cover.formats.medium.url;
+      } else if (rec.Cover.formats.thumbnail.url !== undefined) {
+        return rec.Cover.formats.thumbnail.url;
+      }
+    } else if (idx == 1) {
+      if (rec.Result1.formats.medium.url !== undefined) {
+        return rec.Result1.formats.medium.url;
+      } else if (rec.Result1.formats.thumbnail.url !== undefined) {
+        return rec.Result1.formats.thumbnail.url;
+      }
+    } else if (idx == 2) {
+      if (rec.Result2.formats.medium.url !== undefined) {
+        return rec.Result2.formats.medium.url;
+      } else if (rec.Result2.formats.thumbnail.url !== undefined) {
+        return rec.Result2.formats.thumbnail.url;
+      }
+    }
+  }
 
   return (
     <>
       <NextSeo {...SEO} />
       <Header navigation={navigation}/>
-      <div className="bg-linen font-dLibre text-dBrown">
+      <div className="bg-white font-dLibre text-dBrown">
         <header
           className="relative w-full bg-center bg-no-repeat bg-cover pt-32 pb-48 px-6 mb-6 z-0"
           style={{ backgroundImage: "url(./assets/images/bg.jpg)" }}
@@ -94,7 +115,7 @@ function Recipes(props) {
                       <CardResult
                         key={rec.Slug}
                         title={rec.Name}
-                        image={rec.Cover.formats.medium.url}
+                        image={getImage(rec, 0)}
                         category={rec.navigation.slug}
                         slug={rec.Slug}
                       />

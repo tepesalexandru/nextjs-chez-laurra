@@ -18,6 +18,12 @@ function Header(props) {
     ));
   };
 
+  const getLanguage = () => {
+    if (i18n.language === 'ro') return "fr";
+    else if (i18n.language === 'fr') return "en";
+    else return "ro";
+  }
+
   return (
     <div className="bg-linen font-dLibre text-dBrown">
       <nav className="fixed top-0 left-0 w-full flex flex-col bg-linen mb-8 z-50 shadow-lg">
@@ -57,8 +63,8 @@ function Header(props) {
             </Link>
           </ul>
           {/* Language */}
-          <button onClick={() => i18n.changeLanguage(i18n.language === "ro" ? "fr" : "ro")} className="fStyle bg-wattle font-bold rounded-full shadow-sm py-2 px-4 text-xs">
-            Switch to French
+          <button onClick={() => i18n.changeLanguage(getLanguage())} className="fStyle bg-wattle font-bold rounded-full shadow-sm py-2 px-4 text-xs">
+            Change to: {getLanguage().toUpperCase()}
           </button>
         </section>
       </nav>
