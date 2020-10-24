@@ -26,7 +26,7 @@ export default function Searchbar(props) {
           <a>
             <div className="absolute top-0 right-0 h-full py-1 pr-1">
               <input
-                className="fStyle bg-red text-linen py-1 px-4 cursor-pointer rounded-full"
+                className="fStyle bg-wattle text-linen py-1 px-4 cursor-pointer rounded-full"
                 type="submit"
                 defaultValue="Search"
               />
