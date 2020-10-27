@@ -1,5 +1,5 @@
 export default {
-    title: "Chezz Laura",
+    title: "Chez Laurra",
     description: "Retetele Laurei",
     openGraph: {
         type: "website",

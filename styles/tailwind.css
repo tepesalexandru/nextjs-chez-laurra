@@ -15,7 +15,7 @@
 }
 
 .cardLink {
-  @apply w-5/6 bg-wattle text-linen rounded-full shadow-lg py-2 px-4 flex-shrink-0 -mt-5 z-10 font-bold flex justify-between items-center;
+  @apply w-5/6 text-white bg-wattle rounded-full shadow-lg py-2 px-4 flex-shrink-0 -mt-5 z-10 font-bold flex justify-between items-center;
 }
 
 .cardLink:focus {
@@ -31,11 +31,15 @@
 }
 
 .pButton {
-  @apply bg-red text-linen py-2 px-4 rounded-full font-bold inline-block;
+  @apply bg-wattle py-2 px-4 rounded-full font-bold inline-block;
 }
 
 .pButton:focus {
   @apply outline-none shadow-outline;
+}
+
+.longImg {
+  @apply w-full rounded-lg shadow-md overflow-hidden flex-shrink-0;
 }
 
 .sImgBox {
@@ -51,6 +55,22 @@
 }
 
 .btnImgBox:focus {
+  @apply outline-none shadow-outline;
+}
+
+.pageBtnSelected {
+  @apply h-6 w-6 rounded-full bg-wattle mx-2;
+}
+
+.pageBtnSelected:focus {
+  @apply outline-none shadow-outline;
+}
+
+.pageBtn {
+  @apply h-6 w-6 rounded-full mx-1;
+}
+
+.pageBtn:focus {
   @apply outline-none shadow-outline;
 }
 

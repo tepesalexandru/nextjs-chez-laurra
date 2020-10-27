@@ -18,9 +18,18 @@ import absoluteUrl from 'next-absolute-url'
 
 function RecipePage(props) {
   console.log("full url", props.fullURL);
+  const getLabel = (rec) => {
+    if (i18n.language === "ro") {
+      return rec.Name;
+    } else if (i18n.language === "fr") {
+      return rec.Name_Fr;
+    } else {
+      return rec.Name_Eng;
+    }
+  }
   const [recipeRef, setRecipeRef] = useState(null);
   const SEO = {
-    title: `Chezz Laura | ${props.recipe.Name}`,
+    title: `Chez Laurra | ${getLabel(props.recipe)}`,
     description: `${props.recipe.Name}`
   }
   const navigation = [];
@@ -53,15 +62,7 @@ function RecipePage(props) {
     }
   }
 
-  const getLabel = (rec) => {
-    if (i18n.language === "ro") {
-      return rec.Name;
-    } else if (i18n.language === "fr") {
-      return rec.Name_Fr;
-    } else {
-      return rec.Name_Eng;
-    }
-  }
+ 
 
   const getDesc = (rec) => {
     if (i18n.language === "ro") {

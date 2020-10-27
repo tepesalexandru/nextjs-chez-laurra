@@ -11,7 +11,8 @@
     "slug-3": "desert"
   },
   "home": {
-    "header": "Vos recettes favorites en ce moment"
+    "header": "Vos recettes favorites en ce moment",
+    "all": "Toutes Catégories"
   },
   "contact": {
     "header": "Contact",
@@ -19,6 +20,9 @@
     "name": "Nom",
     "placeholder": "Écrivez ici",
     "submit": "Envoyer"
+  },
+  "search": {
+    "slug": "Recettes"
   },
   "recipe": {
     "ingredients": "Ingrédients",

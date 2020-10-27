@@ -6,7 +6,7 @@ import Header from "../components/Header";
 
 function Contact({ t }) {
   const SEO = {
-    title: "Chezz Laura | Contact",
+    title: "Chez Laurra | Contact",
     description: "Despre mine",
   };
   const navigation = [];

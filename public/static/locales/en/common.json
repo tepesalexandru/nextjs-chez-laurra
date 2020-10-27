@@ -11,7 +11,8 @@
     "slug-3": "desert"
   },
   "home": {
-    "header": "Let's cook something creative!"
+    "header": "Let's cook something creative!",
+    "all": "All Categories"
   },
   "contact": {
     "header": "Contact",
@@ -19,6 +20,9 @@
     "name": "Name",
     "placeholder": "Type here...",
     "submit": "Send"
+  },
+  "search": {
+    "slug": "Recipes"
   },
   "recipe": {
     "ingredients": "Ingredients",

@@ -11,7 +11,8 @@
     "slug-3": "desert"
   },
   "home": {
-    "header": "Ultimele Retete"
+    "header": "Ultimele Retete",
+    "all": "Toate Categoriile"
   },
   "contact": {
     "header": "Contact",
@@ -21,7 +22,7 @@
     "submit": "Trimite"
   },
   "search": {
-
+    "slug": "Retete"
   },
   "recipe": {
       "ingredients": "Ingrediente",

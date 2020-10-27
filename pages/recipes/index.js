@@ -36,7 +36,7 @@ function Recipes(props) {
   });
 
   const SEO = {
-    title: 'Chezz Laura | Retete',
+    title: `Chez Laurra | ${props.t('search.slug')}`,
     description: 'Toate retetele'
   }
   const navigation = [];

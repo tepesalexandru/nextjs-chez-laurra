@@ -50,7 +50,7 @@ function CategoryPage(props) {
   };
 
   const SEO = {
-    title: `Chezz Laura | ${props.headerTitle}`,
+    title: `Chez Laurra | ${props.t(`navigations.nav-${props.headerTitle}`)}`,
     description: `${props.headerTitle}`
   }
 
