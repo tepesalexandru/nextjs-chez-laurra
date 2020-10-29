@@ -80,9 +80,19 @@ function Header(props) {
             </Link>
           </ul>
           {/* Language */}
-          <button onClick={() => i18n.changeLanguage(getLanguage())} className="fStyle bg-wattle font-bold rounded-full shadow-sm py-2 px-4 text-xs">
-            Change to: {getLanguage().toUpperCase()}
+          <div>
+          <button onClick={() => i18n.changeLanguage("fr")} >
+          <i className="france flag"></i>
           </button>
+          <button onClick={() => i18n.changeLanguage("en")}>
+          <i className="gb uk flag"></i>
+          </button>
+          <button onClick={() => i18n.changeLanguage("ro")}>
+          <i className="ro flag"></i>
+          </button>
+          
+          </div>
+         
         </section>
       </nav>
       <section
