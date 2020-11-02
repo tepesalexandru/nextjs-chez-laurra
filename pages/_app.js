@@ -1,6 +1,6 @@
 
 
-import "mdbreact/dist/css/mdb.css";
+
 import "../styles/styles.css";
 import "../styles/custom.css";
 import "swiper/swiper-bundle.css";
